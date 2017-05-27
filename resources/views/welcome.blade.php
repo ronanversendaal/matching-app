@@ -20,8 +20,6 @@
 
         @include('partials/navigation')
 
-            
-
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xs-12">

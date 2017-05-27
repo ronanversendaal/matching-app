@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="31px" height="22px" viewBox="0 0 31 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>knop-pijl-wit</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Desktop-HD" sketch:type="MSArtboardGroup" transform="translate(-1189.000000, -1855.000000)" stroke-linecap="square" stroke="#FFFFFF" stroke-width="5">
+            <g id="Rectangle-2-+-MIJN-ZUIDWESTER-+-Line-+-Line-3-Copy-6" sketch:type="MSLayerGroup" transform="translate(1009.000000, 1844.500000)">
+                <g id="knop-pijl-wit" transform="translate(183.000000, 14.000000)" sketch:type="MSShapeGroup">
+                    <g id="Line-+-Line-3" transform="translate(0.081731, 0.278846)">
+                        <path d="M0.446213942,0.475961538 L6.75663203,7.20707417" id="Line"></path>
+                        <path d="M0.446213942,7.13942308 L6.75663203,13.8705357" id="Line-2" transform="translate(3.601423, 10.504979) scale(1, -1) translate(-3.601423, -10.504979) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

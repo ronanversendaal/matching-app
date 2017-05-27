@@ -1,0 +1,25 @@
+nav.navbar{
+
+    a#logo{
+        background-image: url('img/logo.svg');
+        display: block;
+        background-repeat: no-repeat;
+        text-indent: -99999px;
+        padding : 30px;
+        background-position: 25% center;
+        background-size : 50%;
+    }
+
+    li{
+        a {
+            padding-top: 19px;
+            padding-bottom: 18px;
+        }
+    }
+
+
+    .navbar-toggle{
+        border: none;
+        padding: 15px 10px;
+    }
+}

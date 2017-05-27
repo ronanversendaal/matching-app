@@ -1,0 +1,68 @@
+.btn{
+
+    box-shadow: -4px 5px 0 0 rgba(0, 0, 0, 0.37);
+    display: inline-block;
+    border-style: solid;
+    border-radius: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    -webkit-transition: all .15s, top, left .1s linear;
+    -moz-transition: all .15s, top, left .1s linear;
+    -ms-transition: all .15s, top, left .1s linear;
+    -o-transition: all .15s, top, left .1s linear;
+    transition: all .15s, top, left .1s linear;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active{
+        box-shadow: none;
+        position: relative;
+        top: 4px;
+        left: -5px;
+    }
+
+    &.btn-default{
+        
+            background-color: #f090b9;
+            border-color: #f090b9;
+        &:hover,
+        &:focus,
+        &:active,
+        &.active{
+            border-color: #e43480;
+            background-color: #e43480;
+        }
+    }
+
+    &.btn-primary{
+
+        background-color: #96b0be;
+        border-color: #96b0be;
+        &:hover,
+        &:focus,
+        &:active,
+        &.active{
+            background-color: #abc0cb;
+            border-color: #abc0cb;
+        }
+    }
+
+    &.btn-next{
+
+        
+        background-image: url('img/knop-pijl-wit.svg');
+        background-repeat: no-repeat;
+        background-position: 100% center;
+        min-width: 60px;
+
+    }
+
+
+}

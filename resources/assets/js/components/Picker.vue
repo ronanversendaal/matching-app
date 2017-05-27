@@ -1,5 +1,9 @@
 <template>
     <div id="picker-container">
+
+
+            <h4 class="info-title">{{current.name}}</h4>
+
         <slick ref="slick" :options="slickOptions" @init="setSlide(0)" @afterChange="afterChange">
           <a  v-for="item in itemList" :href="item.img"><img class="img-responsive" :src="item.img" alt=""></a>
         </slick>
@@ -7,15 +11,14 @@
         <div class="picker-actions clearfix">
           <div class="tags">
           </div>
-          <div class="pull-right">
-            <div class="btn btn-default" @click="next()">Next</div>
+
             <div class="btn btn-primary" @click="pick(index)">Like</div>
+          <div class="pull-right">
+            <div class="btn btn-default btn-next" @click="next()">&nbsp;</div>
           </div>
         </div>
 
         <div class="well" id="info">
-            <h3 class="info-title">{{current.name}}</h3>
-
             <p class="info-bio">
                 {{current.bio}}
             </p>
@@ -40,7 +43,7 @@
                 },
                 index : 0,
                 slickOptions : {
-                  infinite: false,
+                  infinite: true,
                   touchMove : false,
                   draggable: false,
                   swipeToSlide: false,
@@ -93,9 +96,9 @@
                 this.$refs.slick.next();
             },
 
-            prev() {
-                this.$refs.slick.prev();
-            },
+            // prev() {
+            //     this.$refs.slick.prev();
+            // },
             afterChange(event, slick, currentSlide){
               this.setSlide(currentSlide);
             },
@@ -109,7 +112,6 @@
             },
 
             reInit() {
-                // Helpful if you have to deal with v-for to update dynamic lists
                 this.$refs.slick.reSlick();
             },
 

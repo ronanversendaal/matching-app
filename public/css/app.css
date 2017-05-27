@@ -8301,29 +8301,6 @@ button.close {
   }
 }
 
-#picker-container {
-  margin-top: 140px;
-  margin-bottom: 60px;
-}
-
-#picker-container .picker-actions {
-  margin-top: 20px;
-}
-
-#info {
-  margin-top: 40px;
-  background-color: #edf2f5;
-}
-
-nav a#logo {
-  background-image: url(/fonts/logo.svg?ed7c7f2930d3fcd179a22df0ed33bf03);
-  display: block;
-  background-repeat: no-repeat;
-  text-indent: -99999px;
-  padding: 60px;
-  background-position: center;
-}
-
 .full {
   width: 100%;
 }
@@ -8345,13 +8322,13 @@ nav a#logo {
   border-top: 1px solid #DDDDDD;
 }
 
-.footer p {
-  margin: 0;
+.footer a {
   color: #fff;
 }
 
-.footer img {
-  max-width: 100%;
+.footer p {
+  margin: 0;
+  color: #fff;
 }
 
 .footer h3 {
@@ -8362,6 +8339,10 @@ nav a#logo {
   line-height: 27px;
   padding: 40px 0 10px;
   text-transform: uppercase;
+}
+
+.footer img {
+  max-width: 100%;
 }
 
 .footer ul {
@@ -8378,87 +8359,6 @@ nav a#logo {
   display: block;
 }
 
-.footer a {
-  color: #fff;
-}
-
-.supportLi h4 {
-  font-size: 20px;
-  font-weight: lighter;
-  line-height: normal;
-  margin-bottom: 0 !important;
-  padding-bottom: 0;
-}
-
-.newsletter-box input#appendedInputButton {
-  background: #FFFFFF;
-  display: inline-block;
-  float: left;
-  height: 30px;
-  clear: both;
-  width: 100%;
-}
-
-.newsletter-box .btn {
-  border: medium none;
-  border-radius: 3px;
-  display: inline-block;
-  height: 40px;
-  padding: 0;
-  width: 100%;
-  color: #fff;
-}
-
-.newsletter-box {
-  overflow: hidden;
-}
-
-.bg-gray {
-  background-image: -moz-linear-gradient(center bottom, #BBBBBB 0%, #F0F0F0 100%);
-  box-shadow: 0 1px 0 #B4B3B3;
-}
-
-.social li {
-  background: none repeat scroll 0 0 #fff;
-  border: 2px solid #B5B5B5;
-  border-radius: 50%;
-  float: left;
-  height: 36px;
-  line-height: 36px;
-  margin: 0 8px 0 0;
-  padding: 0;
-  text-align: center;
-  width: 36px;
-  transition: all 0.5s ease 0s;
-  -moz-transition: all 0.5s ease 0s;
-  -webkit-transition: all 0.5s ease 0s;
-  -ms-transition: all 0.5s ease 0s;
-  -o-transition: all 0.5s ease 0s;
-}
-
-.social li:hover {
-  transform: scale(1.15) rotate(360deg);
-  -webkit-transform: scale(1.1) rotate(360deg);
-  -moz-transform: scale(1.1) rotate(360deg);
-  -ms-transform: scale(1.1) rotate(360deg);
-  -o-transform: scale(1.1) rotate(360deg);
-}
-
-.social li a {
-  color: #EDEFF1;
-}
-
-.social li:hover {
-  border: 2px solid #2c3e50;
-  background: #2c3e50;
-}
-
-.social li a i {
-  font-size: 16px;
-  margin: 0 0 0 5px;
-  color: #EDEFF1;
-}
-
 .footer-bottom {
   background: #e9646c;
   border-top: 1px solid #fff;
@@ -8472,23 +8372,93 @@ nav a#logo {
   font-size: 0.6em;
 }
 
-.payments {
-  font-size: 1.5em;
+nav.navbar a#logo {
+  background-image: url(/fonts/logo.svg?ed7c7f2930d3fcd179a22df0ed33bf03);
+  display: block;
+  background-repeat: no-repeat;
+  text-indent: -99999px;
+  padding: 30px;
+  background-position: 25% center;
+  background-size: 50%;
 }
 
-.region-sidebar-first {
-  padding-bottom: 16px;
-  padding-top: 16px;
+nav.navbar li a {
+  padding-top: 19px;
+  padding-bottom: 18px;
 }
 
-.region-sidebar-first ul.menu li {
-  margin: 0 0 0 0em;
-  padding: 4px;
+nav.navbar .navbar-toggle {
+  border: none;
+  padding: 15px 10px;
 }
 
 .btn {
-  padding: 10px 13px;
-  text-decoration: none;
+  box-shadow: -4px 5px 0 0 rgba(0, 0, 0, 0.37);
+  display: inline-block;
+  border-style: solid;
   border-radius: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  transition: all .15s, top, left .1s linear;
+  box-sizing: border-box;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active,
+.btn.active {
+  box-shadow: none;
+  position: relative;
+  top: 4px;
+  left: -5px;
+}
+
+.btn.btn-default {
+  background-color: #f090b9;
+  border-color: #f090b9;
+}
+
+.btn.btn-default:hover,
+.btn.btn-default:focus,
+.btn.btn-default:active,
+.btn.btn-default.active {
+  border-color: #e43480;
+  background-color: #e43480;
+}
+
+.btn.btn-primary {
+  background-color: #96b0be;
+  border-color: #96b0be;
+}
+
+.btn.btn-primary:hover,
+.btn.btn-primary:focus,
+.btn.btn-primary:active,
+.btn.btn-primary.active {
+  background-color: #abc0cb;
+  border-color: #abc0cb;
+}
+
+.btn.btn-next {
+  background-image: url(/fonts/knop-pijl-wit.svg?dbeb001d32c1f6690704aa1f54687a46);
+  background-repeat: no-repeat;
+  background-position: 100% center;
+  min-width: 60px;
+}
+
+#picker-container {
+  margin-top: 90px;
+  margin-bottom: 60px;
+}
+
+#picker-container .picker-actions {
+  margin-top: 20px;
+}
+
+#info {
+  margin-top: 40px;
+  background-color: #edf2f5;
 }
 

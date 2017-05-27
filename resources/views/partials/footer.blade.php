@@ -31,6 +31,7 @@
                 </div>
                 <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
                    <h3> Lorem Ipsum </h3>
+                   <img class="img-responsive" src="{{secure_asset('img/zuidwester-logo-wit.svg')}}" />
                 </div>
             </div>
             <!--/.row--> 
@@ -42,14 +43,6 @@
     <div class="footer-bottom">
         <div class="container">
             <p class="pull-left"> Copyright © {{date('Y') .' - '.config('app.name')}} </p>
-            <div class="pull-right">
-                <ul class="nav nav-pills payments">
-                    <li><i class="fa fa-cc-visa"></i></li>
-                    <li><i class="fa fa-cc-mastercard"></i></li>
-                    <li><i class="fa fa-cc-amex"></i></li>
-                    <li><i class="fa fa-cc-paypal"></i></li>
-                </ul> 
-            </div>
         </div>
     </div>
     <!--/.footer-bottom--> 
