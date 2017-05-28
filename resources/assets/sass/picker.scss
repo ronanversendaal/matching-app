@@ -7,14 +7,22 @@
     }
 
     .slick-track{
-        height: 45vh;
+        min-height: 45vh;
+        max-height: 350px;
     }
 
     .slick-slide{
         display: flex; align-items:center;
 
+        vertical-align: middle;
+
         img{
-            width: 100%;    
+            left : 50%;
+            vertical-align: middle;
+            max-width: 300px;
+            width: 300px;
+            position: relative;
+            transform: translate(-50%, -0%);
         }
     }
 }
