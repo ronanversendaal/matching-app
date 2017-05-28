@@ -11,6 +11,6 @@ class IndexController extends Controller{
         //@todo replace this with repo and only get client type users.
         $clients = User::all()->toJson();
 
-        return view('welcome', ['clients' => $clients]);        
+        return view('index', ['clients' => $clients]);        
     }
 }
