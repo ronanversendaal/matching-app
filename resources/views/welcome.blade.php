@@ -12,7 +12,7 @@
 
         
 
-        <meta name="theme-color" content="#e43480">
+        <meta name="theme-color" content="#e9646c">
         <link rel="manifest" href="{{secure_asset('manifest.json')}}">
 
         <link href="{{secure_asset('/css/app.css')}}" rel="stylesheet" type="text/css">
