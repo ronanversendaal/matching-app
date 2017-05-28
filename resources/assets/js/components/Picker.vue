@@ -1,12 +1,19 @@
 <template>
     <div id="picker-container">
 
-
-            <h4 class="info-title">{{current.name}}</h4>
-
         <slick ref="slick" :options="slickOptions" @afterChange="afterChange">
           <a  v-for="item in itemList" :href="item.details.profile"><img class="img-responsive" :src="item.details.profile" alt=""></a>
+
         </slick>
+
+        <div class="well" id="info">
+
+            <h6 class="info-title">{{current.name}}</h6>
+            <div class="divider"></div>
+            <p class="info-bio">
+                {{current.details.bio}}
+            </p>
+        </div>
 
         <div class="picker-actions clearfix">
           <div class="tags">
@@ -18,11 +25,6 @@
           </div>
         </div>
 
-        <div class="well" id="info">
-            <p class="info-bio">
-                {{current.details.bio}}
-            </p>
-        </div>
     </div>
 </template>
 
