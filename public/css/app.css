@@ -8404,7 +8404,7 @@ nav.navbar .navbar-toggle {
   text-transform: uppercase;
   text-decoration: none;
   color: #fff;
-  transition: all .15s, top, left .1s linear;
+  transition: all .15s, left .05s, top .1s linear;
   box-sizing: border-box;
   outline: none  !important;
 }
