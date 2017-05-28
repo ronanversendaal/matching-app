@@ -1,5 +1,8 @@
 .btn{
 
+    position: relative;
+    top: -4px;
+    left: 5px;
     box-shadow: -4px 5px 0 0 rgba(0, 0, 0, 0.37);
     display: inline-block;
     border-style: solid;
@@ -18,14 +21,19 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 
-    &:focus,
-    &:active,
-    &.active{
-        box-shadow: none;
-        position: relative;
-        top: 4px;
-        left: -5px;
+    outline: none  !important; 
+    
+
+    &:not(.btn-link){
+        &:active,
+        &.active{
+            box-shadow: none;
+            position: relative;
+            top: 0px;
+            left: 0px;
+        }    
     }
+    
 
     &.btn-default{
         
@@ -61,5 +69,9 @@
 
     }
 
+    &.btn-link{
+        color : #e43480;
+        box-shadow: none;
+    }
 
 }

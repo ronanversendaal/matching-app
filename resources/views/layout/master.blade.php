@@ -28,7 +28,9 @@
         @include('partials/navigation')
 
             <div class="container-fluid">
-                @yield('content')
+                <div id="content">
+                    @yield('content')
+                </div>
             </div>
         </div>
 

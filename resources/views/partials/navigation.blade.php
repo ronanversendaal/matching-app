@@ -17,29 +17,17 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
+            @if (Route::has('login'))
+                  @if (Auth::check())
+                      <li><a href="{{ url('/home') }}">Home</a></li>
+                  @else
+                      <li><a href="{{ url('/login') }}">Login</a></li>
+                      <li><a href="{{ url('/register') }}">Register</a></li>
+                  @endif
+            @endif
           </ul>
-          @if (Route::has('login'))
-                @if (Auth::check())
-                    <li><a href="{{ url('/home') }}">Home</a></li>
-                @else
-                    <li><a href="{{ url('/login') }}">Login</a></li>
-                    <li><a href="{{ url('/register') }}">Register</a></li>
-                @endif
-          @endif
+
         </li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-          @if (Route::has('login'))
-              @if (Auth::check())
-                  <li><a href="{{ url('/home') }}">Home</a></li>
-              @else
-                  <li><a href="{{ url('/login') }}">Login</a></li>
-                  <li><a href="{{ url('/register') }}">Register</a></li>
-              @endif
-          @endif
-      </ul>
-    </div><!--/.nav-collapse -->
   </div>
 </nav>
