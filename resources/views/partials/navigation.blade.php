@@ -19,10 +19,14 @@
           <ul class="dropdown-menu">
             @if (Route::has('login'))
                   @if (Auth::check())
-                      <li><a href="{{ url('/home') }}">Home</a></li>
+                      <li><a href="{{ url('/logout') }}"
+                          onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                          Logout
+                      </a></li>
+
                   @else
                       <li><a href="{{ url('/login') }}">Login</a></li>
-                      <li><a href="{{ url('/register') }}">Register</a></li>
                   @endif
             @endif
           </ul>
@@ -30,4 +34,8 @@
         </li>
       </ul>
   </div>
+
+  <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+      {{ csrf_field() }}
+  </form>
 </nav>
