@@ -7,9 +7,21 @@
     "orientation": "portrait",
     "background_color": "#fff",
     "theme_color": "#e9646c",
-    "icons": [{
-        "src": "img/logo-icon.svg",
-        "sizes": "192x192",
-        "type": "image/png"
-      }]
+    "icons": [
+        {
+            "src": "img/logo-icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "img/logo-icon-144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "img/logo-icon-96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        }
+    ]
 }
