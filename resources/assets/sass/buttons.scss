@@ -1,8 +1,6 @@
 .btn{
 
     position: relative;
-    top: -4px;
-    left: 5px;
     box-shadow: -4px 5px 0 0 rgba(0, 0, 0, 0.37);
     display: inline-block;
     border-style: solid;
@@ -25,6 +23,11 @@
     
 
     &:not(.btn-link){
+
+
+        top: -4px;
+        left: 5px;
+
         &:active,
         &.active{
             box-shadow: none;
@@ -72,6 +75,9 @@
     &.btn-link{
         color : #e43480;
         box-shadow: none;
+
+            top: 4px;
+            left: -10px;
     }
 
 }

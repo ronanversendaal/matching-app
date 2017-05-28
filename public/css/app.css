@@ -8396,8 +8396,6 @@ nav.navbar .navbar-toggle {
 
 .btn {
   position: relative;
-  top: -4px;
-  left: 5px;
   box-shadow: -4px 5px 0 0 rgba(0, 0, 0, 0.37);
   display: inline-block;
   border-style: solid;
@@ -8409,6 +8407,11 @@ nav.navbar .navbar-toggle {
   transition: all .15s, top, left .1s linear;
   box-sizing: border-box;
   outline: none  !important;
+}
+
+.btn:not(.btn-link) {
+  top: -4px;
+  left: 5px;
 }
 
 .btn:not(.btn-link):active,
@@ -8453,6 +8456,8 @@ nav.navbar .navbar-toggle {
 .btn.btn-link {
   color: #e43480;
   box-shadow: none;
+  top: 4px;
+  left: -10px;
 }
 
 #picker-container {
