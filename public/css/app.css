@@ -8468,6 +8468,10 @@ nav.navbar .navbar-toggle {
           align-items: center;
 }
 
+#picker-container .slick-slide img {
+  width: 100%;
+}
+
 #info {
   border-radius: 0;
   background-color: #edf2f5;
