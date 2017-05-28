@@ -1,9 +1,17 @@
 #picker-container{
-    margin-top: 90px;
+    margin-top: 100px;
     margin-bottom: 60px;
 
     .picker-actions{
         margin-top: 20px;
+    }
+
+    .slick-track{
+        height: 320px;
+    }
+
+    .slick-slide{
+        display: flex; align-items:center;
     }
 }
 
