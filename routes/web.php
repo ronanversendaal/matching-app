@@ -12,7 +12,7 @@
 */
 
 Route::get('/', array(
-    'as' => 'home',
+    'as' => 'index',
     'uses' => 'IndexController@getIndex'
 ));
 
