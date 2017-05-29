@@ -8,21 +8,22 @@
 
         <div class="well" id="info">
 
+          <div class="picker-actions row clearfix">
+              <div class="btn btn-primary" @click="pick(index)">
+                <span class="glyphicon glyphicon-thumbs-up"></span>
+              </div>
+              <div class="pull-right">
+                <div class="btn btn-default btn-next" @click="next()">&nbsp;</div>
+              </div>
+          </div>
+
             <h6 class="info-title">{{current.name}}</h6>
-            <div class="divider"></div>
-            <p class="info-bio">
-                {{current.details.bio}}
-            </p>
-        </div>
-
-        <div class="picker-actions clearfix">
-          <div class="tags">
-          </div>
-
-            <div class="btn btn-primary" @click="pick(index)">Like</div>
-          <div class="pull-right">
-            <div class="btn btn-default btn-next" @click="next()">&nbsp;</div>
-          </div>
+              <div class="divider"></div>
+              <p class="info-bio">
+                  {{current.details.bio}}
+              </p>
+            <div class="tags">
+            </div>
         </div>
 
     </div>
@@ -47,6 +48,7 @@
                 },
                 index : 0,
                 slickOptions : {
+                  arrows: false,
                   infinite: true,
                   touchMove : false,
                   draggable: false,

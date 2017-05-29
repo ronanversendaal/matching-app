@@ -14,18 +14,25 @@
 
 @import "picker";
 
+body{
 
-#content{
+    // Use this so our images dont get deformed
+    min-width: 300px;
 
-    min-height: 50vh;
-    margin-top: 12vh;
-}
+    
 
-.btn{
+    #content{
 
-    font-size: 16px;
+        min-height: 50vh;
+        margin-top: 12vh;
+    }
 
-    &.forgot-password{
-        margin-top: 15px;
+    .btn{
+
+        font-size: 16px;
+
+        &.forgot-password{
+            margin-top: 15px;
+        }
     }
 }

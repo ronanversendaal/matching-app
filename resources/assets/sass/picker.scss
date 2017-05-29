@@ -3,7 +3,10 @@
     margin-bottom: 30px;
 
     .picker-actions{
-        margin-top: 20px;
+        height: 0;
+        position: relative;
+        bottom: 40px;
+        right: 2px;
     }
 
     .slick-track{
@@ -33,7 +36,7 @@
 
 
     h6.info-title{
-        margin-top : 5px;
+        margin-top : 15px;
         margin-bottom :0;
         padding-bottom: 16px;
         border-bottom: 1px solid #BAC1C8;

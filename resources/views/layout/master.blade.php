@@ -15,7 +15,7 @@
         <meta name="theme-color" content="#e9646c">
         <link rel="manifest" href="{{secure_asset('manifest.json')}}">
 
-        <link href="{{secure_asset('/css/app.css')}}" rel="stylesheet" type="text/css">
+        <link href="{{asset('/css/app.css', (env('APP_ENV') === 'production'))}}" rel="stylesheet" type="text/css">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
