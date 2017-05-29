@@ -4,7 +4,7 @@
     box-shadow: -4px 5px 0 0 rgba(0, 0, 0, 0.37);
     display: inline-block;
     border-style: solid;
-    border-radius: 0;
+    border-radius: 0px;
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
@@ -40,25 +40,26 @@
 
     &.btn-default{
         
-            background-color: #f090b9;
-            border-color: #f090b9;
+            background-color: #96b0be;
+            border-color: #96b0be;
+
         &:focus,
         &:active,
         &.active{
-            border-color: #e43480;
-            background-color: #e43480;
+            border-color: #abc0cb;
+            background-color: #abc0cb;
         }
     }
 
     &.btn-primary{
 
-        background-color: #96b0be;
-        border-color: #96b0be;
+        background-color: #e9646c;
+        border-color: #e9646c;
         &:focus,
         &:active,
         &.active{
-            background-color: #abc0cb;
-            border-color: #abc0cb;
+            background-color: #f090b9;
+            border-color: #f090b9;
         }
     }
 

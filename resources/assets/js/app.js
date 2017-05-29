@@ -13,6 +13,9 @@ window.Vue = require('vue');
 Slick = require('vue-slick');
 Vue.use(Slick);
 
+Simplert = require('vue2-simplert');
+Vue.use(Simplert);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -19,7 +19,7 @@ body{
     // Use this so our images dont get deformed
     min-width: 300px;
 
-    
+
 
     #content{
 
@@ -34,5 +34,10 @@ body{
         &.forgot-password{
             margin-top: 15px;
         }
+    }
+
+
+    .simplert__close, .simplert__confirm {
+        margin: 0px 0.4em;
     }
 }

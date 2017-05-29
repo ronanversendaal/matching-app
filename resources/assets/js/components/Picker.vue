@@ -2,7 +2,7 @@
     <div id="picker-container">
 
         <slick ref="slick" :options="slickOptions" @afterChange="afterChange">
-          <a  v-for="item in itemList" :href="item.details.profile"><img class="img-responsive" :src="item.details.profile" alt=""></a>
+          <a  v-for="item in itemList" href="javascript:;"><img class="img-responsive" :src="item.details.profile" alt=""></a>
 
         </slick>
 
@@ -25,7 +25,10 @@
             <div class="tags">
             </div>
         </div>
-
+        <simplert
+                  useIcon=true
+                  ref="simplert">
+        </simplert>
     </div>
 </template>
 
@@ -34,7 +37,7 @@
     export default {
 
 
-        components: { Slick },
+        components: { Slick, Simplert },
 
 
         data (){
@@ -97,7 +100,18 @@
             },
 
             pick(index){
-                console.log('picked : ' + this.itemList[index].id);
+
+                let obj = {
+                   title: 'Match!',
+                   message: 'Now that you have a match with ' + this.itemList[index].name + ', what would you do now?',
+                   type: 'success',
+                   useConfirmBtn: true,
+                   customConfirmBtnText: 'I dunno?', //string -- confirm button text
+                  customConfirmBtnClass: 'btn btn-primary',
+                  customCloseBtnText : 'Me neither.',
+                  customCloseBtnClass: 'btn btn-default',
+                }
+                this.$refs.simplert.openSimplert(obj)
             },
         }
     }
