@@ -16,6 +16,9 @@ class PermissionsTableSeeder extends Seeder
             'browse_media',
             'browse_settings',
             'browse_app',
+            'browse_matches',
+            'read_matches',
+            'approve_matches'
         ];
 
         foreach ($keys as $key) {
@@ -35,6 +38,5 @@ class PermissionsTableSeeder extends Seeder
 
         Permission::generateFor('posts');
 
-        Permission::generateFor('categories');
     }
 }

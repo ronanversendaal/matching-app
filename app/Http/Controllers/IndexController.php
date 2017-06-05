@@ -77,8 +77,6 @@ class IndexController extends Controller
 
             if(!Auth::user()->approved){
 
-                dd(Auth::user()->approved);
-
                 $this->incrementLoginAttempts($request);
 
                 return $this->sendFailedLoginResponse($request);

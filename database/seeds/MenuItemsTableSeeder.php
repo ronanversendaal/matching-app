@@ -33,6 +33,7 @@ class MenuItemsTableSeeder extends Seeder
                 ])->save();
             }
 
+            
             $menuItem = MenuItem::firstOrNew([
                 'menu_id'    => $menu->id,
                 'title'      => 'Media',
@@ -63,13 +64,13 @@ class MenuItemsTableSeeder extends Seeder
                 ])->save();
             }
 
-            $menuItem = MenuItem::firstOrNew([
+            $userMenuItem = MenuItem::firstOrNew([
                 'menu_id'    => $menu->id,
                 'title'      => 'Users',
                 'url'        => route('voyager.users.index', [], false),
             ]);
-            if (!$menuItem->exists) {
-                $menuItem->fill([
+            if (!$userMenuItem->exists) {
+                $userMenuItem->fill([
                     'target'     => '_self',
                     'icon_class' => 'voyager-person',
                     'color'      => null,
@@ -77,19 +78,19 @@ class MenuItemsTableSeeder extends Seeder
                     'order'      => 3,
                 ])->save();
             }
-
+            
             $menuItem = MenuItem::firstOrNew([
                 'menu_id'    => $menu->id,
-                'title'      => 'Categories',
-                'url'        => route('voyager.categories.index', [], false),
+                'title'      => 'Matches',
+                'url'        => route('voyager.matches.index', [], false),
             ]);
             if (!$menuItem->exists) {
                 $menuItem->fill([
                     'target'     => '_self',
-                    'icon_class' => 'voyager-categories',
+                    'icon_class' => 'voyager-people',
                     'color'      => null,
-                    'parent_id'  => null,
-                    'order'      => 8,
+                    'parent_id'  => $userMenuItem->id,
+                    'order'      => 4,
                 ])->save();
             }
 

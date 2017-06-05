@@ -28,6 +28,20 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::post('login', 'IndexController@postLogin')->name('voyager.login');
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('voyager.login');
+
+    Route::resource('matches', 'MatchesController', [
+        'only' => [
+            'create' => 'matches.create',
+            'show' => 'voyager.matches.show',
+            'approve' => 'voyager.matches.approve', // seperate
+            // 'edit' => 'voyager.matches.edit',
+            'destroy' => 'voyager.matches.destroy',
+            // 'store' => 'voyager.matches.store',
+            // 'update' => 'voyager.matches.update',
+            // 'create' => 'voyager.matches.create',
+        ]
+    ]);
+
 });
 
 Route::post('login', 'IndexController@postLogin')->name('login');

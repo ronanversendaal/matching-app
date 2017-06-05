@@ -93,6 +93,20 @@ class DataTypesTableSeeder extends Seeder
                 'description'           => '',
             ])->save();
         }
+
+        $dataType = $this->dataType('slug', 'matches');
+        if (!$dataType->exists) {
+            $dataType->fill([
+                'name'                  => 'matches',
+                'display_name_singular' => 'Match',
+                'display_name_plural'   => 'Match',
+                'icon'                  => 'voyager-people',
+                'model_name'            => 'App\\Models\\Match',
+                'controller'            => 'MatchesController',
+                'generate_permissions'  => 0,
+                'description'           => '',
+            ])->save();
+        }
     }
 
     /**
