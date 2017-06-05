@@ -31,7 +31,7 @@
                 </div>
                 <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
                    <h3> Lorem Ipsum </h3>
-                   <img class="img-responsive" src="{{secure_asset('img/zuidwester-logo-wit.svg')}}" />
+                   <img class="img-responsive" src="{{asset('img/zuidwester-logo-wit.svg', (in_array(env('APP_ENV'), ['production', 'sandbox'])))}}" />
                 </div>
             </div>
             <!--/.row--> 

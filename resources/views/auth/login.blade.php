@@ -7,6 +7,31 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
+
+                    @if(config('app.env') !== 'production')
+                    <div class="alert-container">
+                        <div class="alert alert-warning small">
+                            <h4>Demo Melding</h4>
+                            <p>
+                                Dit is een demo voor {{config('app.name')}}. Er zijn meedere rollen, waaronder elke een account beschikbaar is. Deze hebben de volgende kenmerkende rol-namen:
+                            </p>
+                            <br/>
+                            <ul>
+                                <li>Client ( rolnaam : client )</li>
+                                <li>Vrijwilliger ( rolnaam : volunteer )</li>
+                                <li>Eindverantwoordelijke (rolnaam : executive )</li>
+                                <li>Administrator / Begeleider ( rolnaam : admin )</li>
+                            </ul>
+                            <br/>
+                            <p>Inloggen kan met : <br/>
+                                E-mailadres : {rolnaam}@example.com <br/>
+                                Wachtwoord : {rolnaam}
+
+                            </p>
+                        </div>
+                    </div>
+                    @endif
+
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 

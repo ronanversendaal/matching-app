@@ -6,16 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <link rel="canonical" href="{{route('home')}}" />
+        <link rel="canonical" href="{{url(route('home'))}}" />
 
         <title>{{config('app.name')}}</title>
 
 
 
         <meta name="theme-color" content="#e9646c">
-        <link rel="manifest" href="{{secure_asset('manifest.json')}}">
+        <link rel="manifest" href="{{asset('manifest.json')}}">
 
-        <link href="{{asset('/css/app.css', (in_array(env('APP_ENV'), ['production', 'sandbox'])))}}" rel="stylesheet" type="text/css">
+        <link href="{{asset('/css/app.css')}}" rel="stylesheet" type="text/css">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -36,6 +36,6 @@
 
         @include('partials/footer')
 
-        <script src="{{secure_asset('/js/app.js')}}"></script>
+        <script src="{{asset('/js/app.js')}}"></script>
     </body>
 </html>
