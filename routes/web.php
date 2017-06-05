@@ -26,9 +26,11 @@ Route::get('/app', 'IndexController@getIndex')->name('app')->middleware('auth.ap
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 
-    Route::post('login', 'IndexController@postLogin')->name('voyager.logout');
+    Route::post('login', 'IndexController@postLogin')->name('voyager.login');
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('voyager.login');
 });
 
+Route::post('login', 'IndexController@postLogin')->name('login');
+    Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::any('logout', 'IndexController@logout')->name('app.logout');

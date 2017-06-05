@@ -13,7 +13,7 @@
                         <div class="alert alert-warning small">
                             <h4>Demo Melding</h4>
                             <p>
-                                Dit is een demo voor {{config('app.name')}}. Er zijn meedere rollen, waaronder elke een account beschikbaar is. Deze hebben de volgende kenmerkende rol-namen:
+                                Dit is een demo voor {{config('app.name')}}. Er zijn meedere rollen, waaronder elk een account beschikbaar is. Deze hebben de volgende kenmerkende rol-namen:
                             </p>
                             <br/>
                             <ul>

@@ -74,6 +74,16 @@ class IndexController extends Controller
         $credentials = $this->credentials($request);
 
         if ($this->guard()->attempt($credentials, $request->has('remember'))) {
+
+            if(!Auth::user()->approved){
+
+                dd(Auth::user()->approved);
+
+                $this->incrementLoginAttempts($request);
+
+                return $this->sendFailedLoginResponse($request);
+            }
+
             return $this->sendLoginResponse($request);
         }
 

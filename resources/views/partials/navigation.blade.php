@@ -26,7 +26,8 @@
                       </a></li>
 
                   @else
-                      <li><a href="{{ url(route('voyager.login')) }}">Login</a></li>
+                      <li><a href="{{ url(route('voyager.login')) }}">Login</a>
+                      <li><a href="{{ url(route('register')) }}">Register</a></li>
                   @endif
             @endif
           </ul>
