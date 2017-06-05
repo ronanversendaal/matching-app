@@ -20,6 +20,6 @@ class UserTag extends Authenticatable
 
     public function user()
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany(\App\Models\User::class);
     }   
 }

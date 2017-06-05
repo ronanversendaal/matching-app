@@ -17,16 +17,16 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            @if (Route::has('login'))
+            @if (Route::has('voyager.login'))
                   @if (Auth::check())
-                      <li><a href="{{ url('/logout') }}"
+                      <li><a href="{{ url(route('app.logout')) }}"
                           onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();">
                           Logout
                       </a></li>
 
                   @else
-                      <li><a href="{{ url('/login') }}">Login</a></li>
+                      <li><a href="{{ url(route('voyager.login')) }}">Login</a></li>
                   @endif
             @endif
           </ul>

@@ -31,10 +31,7 @@ class RoleNameCriteria implements CriteriaInterface
      */
     public function apply($model, RepositoryInterface $repository)
     {
-        $model = $model->select('users.*')
-            ->join('role_user', 'role_user.user_id', '=', 'users.id')
-            ->join('roles', 'role_user.role_id', '=', 'roles.id')
-            ->where('roles.id','=', $this->role_id );
+        $model = $model->where('role_id','=', $this->role_id );
 
         return $model;
     }

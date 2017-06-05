@@ -13,18 +13,19 @@
 
 Route::get('/', array(
     'as' => 'index',
-    'uses' => 'IndexController@getIndex'
+    'uses' => 'PageController@index'
 ));
 
 // Authentication Routes...
-        $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
-        $this->post('login', 'Auth\LoginController@login');
-        $this->post('logout', 'Auth\LoginController@logout')->name('logout');
 
-        // Password Reset Routes...
-        $this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-        $this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-        $this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-        $this->post('password/reset', 'Auth\ResetPasswordController@reset');
+Route::get('/app', 'IndexController@getIndex')->name('app')->middleware('auth.app');
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+
+    Route::post('login', 'IndexController@postLogin')->name('voyager.logout');
+});
+
+
+Route::any('logout', 'IndexController@logout')->name('app.logout');

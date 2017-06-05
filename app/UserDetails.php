@@ -15,11 +15,11 @@ class UserDetails extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'bio', 'profile',
+        'bio', 'profile', 'user_id',
     ];
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(\App\Models\User::class);
     }   
 }
