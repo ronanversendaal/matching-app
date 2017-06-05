@@ -16,7 +16,9 @@ Route::get('/', array(
     'uses' => 'PageController@index'
 ));
 
+// Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 // Authentication Routes...
+Auth::routes();
 
 Route::get('/app', 'IndexController@getIndex')->name('app')->middleware('auth.app');
 
@@ -25,7 +27,8 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 
     Route::post('login', 'IndexController@postLogin')->name('voyager.logout');
+    Route::get('login', 'Auth\LoginController@showLoginForm')->name('voyager.login');
 });
 
-
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::any('logout', 'IndexController@logout')->name('app.logout');

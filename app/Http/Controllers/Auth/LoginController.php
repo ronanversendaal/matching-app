@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -20,12 +21,23 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/app';
+    
+    protected function redirectTo()
+    {
+        $user = Auth::user();
+
+        switch ($user->role->name) {
+            case 'volunteer':
+                return route('app');
+                break;
+            case 'executive':
+            case 'admin':
+                return route('voyager.dashboard');
+            default:
+                return route('index');
+                break;
+        }
+    }
 
     /**
      * Create a new controller instance.

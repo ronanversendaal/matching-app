@@ -30,8 +30,7 @@ class PermissionRoleTableSeeder extends Seeder
 
         // Restrict certain
         $permissions = Permission::whereIn('key', [
-            'browse_admin',
-            'browse_menus'
+            'browse_admin'
         ])->get();
 
         $role->permissions()->sync(
