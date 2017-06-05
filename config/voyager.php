@@ -99,4 +99,17 @@ return [
         ],
 
     ],
+
+    'primary_color' => '#e9646c',
+
+    'show_dev_tips' => config('app.debug'), // Show development tip "How To Use:" in Menu and Settings
+
+    // Here you can specify additional assets you would like to be included in the master.blade
+    'additional_css' => [
+        //'css/custom.css',
+    ],
+
+    'additional_js' => [
+        //'js/custom.js',
+    ],
 ];
