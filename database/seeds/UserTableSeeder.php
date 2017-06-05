@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\User;
-use App\Role;
+use App\Models\User;
+use App\Models\Role;
 use App\UserDetails;
 
 class UserTableSeeder extends Seeder
@@ -32,13 +32,28 @@ class UserTableSeeder extends Seeder
         $client->roles()->attach($role_client);
         $client->details()->create($details);
 
+        $client = new User();
+        $client->name = 'Client Tester 2';
+        $client->email = 'client2@example.com';
+        $client->password = bcrypt('client');
+        $client->save();
+        $client->roles()->attach($role_client);
+        $client->details()->create($details_2);
+
+                $client = new User();
+        $client->name = 'Client Tester 3';
+        $client->email = 'client3@example.com';
+        $client->password = bcrypt('client');
+        $client->save();
+        $client->roles()->attach($role_client);
+        $client->details()->create($details_3);
+
         $volunteer = new User();
         $volunteer->name = 'Volunteer Tester';
         $volunteer->email = 'volunteer@example.com';
         $volunteer->password = bcrypt('volunteer');
         $volunteer->save();
         $volunteer->roles()->attach($role_volunteer);
-        $volunteer->details()->create($details_2);
 
         $executive = new User();
         $executive->name = 'Executive Tester';
@@ -46,7 +61,6 @@ class UserTableSeeder extends Seeder
         $executive->password = bcrypt('executive');
         $executive->save();
         $executive->roles()->attach($role_executive);
-        $executive->details()->create($details_3);
 
         $admin = new User();
         $admin->name = 'Admin Tester';
@@ -54,6 +68,5 @@ class UserTableSeeder extends Seeder
         $admin->password = bcrypt('admin');
         $admin->save();
         $admin->roles()->attach($role_admin);
-        $admin->details()->create($details_4);
     }
 }

@@ -79,13 +79,17 @@
                       }
                     },
                   ]
-                },
-                itemList : JSON.parse(this.list)
+                }
             }
         },
         props : ['list'],
+        computed: {
+          itemList : function(){
+            return  JSON.parse(this.list);
+          }
+        },
         mounted(){
-                this.setSlide(0); 
+          this.setSlide(0); 
         },
         methods:{
             next() {
@@ -102,11 +106,11 @@
             pick(index){
 
                 let obj = {
-                   title: 'Match!',
-                   message: 'Now that you have a match with ' + this.itemList[index].name + ', what would you do now?',
-                   type: 'success',
-                   useConfirmBtn: true,
-                   customConfirmBtnText: 'I dunno?', //string -- confirm button text
+                  title: 'Match!',
+                  message: 'Now that you have a match with ' + this.itemList[index].name + ', what would you do now?',
+                  type: 'success',
+                  useConfirmBtn: true,
+                  customConfirmBtnText: 'I dunno?', //string -- confirm button text
                   customConfirmBtnClass: 'btn btn-primary',
                   customCloseBtnText : 'Me neither.',
                   customCloseBtnClass: 'btn btn-default',

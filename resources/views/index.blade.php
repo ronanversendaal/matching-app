@@ -2,6 +2,6 @@
 
 @section('content')
 <div class="content container col-sm-6 col-sm-offset-3 col-md-5 col-md-offset-3">
-    <picker list="{{$clients}}"></picker>
+    <picker list="{{json_encode($clients)}}"></picker>
 </div>
 @endsection
