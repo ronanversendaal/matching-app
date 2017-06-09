@@ -17,10 +17,10 @@
                             </p>
                             <br/>
                             <ul>
-                                <li>Client ( rolnaam : client )</li>
-                                <li>Vrijwilliger ( rolnaam : volunteer )</li>
-                                <li>Eindverantwoordelijke (rolnaam : executive )</li>
-                                <li>Administrator / Begeleider ( rolnaam : admin )</li>
+                                <li>Client <br/>( rolnaam : client )</li>
+                                <li>Vrijwilliger <br/> ( rolnaam : volunteer )</li>
+                                <li>Eindverantwoordelijke <br/> (rolnaam : executive )</li>
+                                <li>Administrator / Begeleider <br/> ( rolnaam : admin )</li>
                             </ul>
                             <br/>
                             <p>Inloggen kan met : <br/>
