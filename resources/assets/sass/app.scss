@@ -23,7 +23,7 @@ body{
     #content{
 
         min-height: 50vh;
-        margin-top: 12vh;
+        margin-top: 15vh;
     }
 
     .btn{
@@ -37,6 +37,10 @@ body{
 
     .simplert__title{
         font-size : 20px;
+    }
+
+    .simplert__content{
+        margin: 15vh auto 0;
     }
 
     .simplert__close, .simplert__confirm {
