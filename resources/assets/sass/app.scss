@@ -35,15 +35,19 @@ body{
         }
     }
 
-    .simplert__title{
-        font-size : 20px;
-    }
+    .simplert{
+        z-index: 1040; // Remove to put nav on top
 
-    .simplert__content{
-        margin: 15vh auto 0;
-    }
+        .simplert__title{
+            font-size : 20px;
+        }
 
-    .simplert__close, .simplert__confirm {
-        margin: 0px 0.4em;
+        .simplert__content{
+            
+        }
+
+        .simplert__close, .simplert__confirm {
+            margin: 0px 0.4em;
+        }
     }
 }
