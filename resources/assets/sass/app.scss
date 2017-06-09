@@ -20,7 +20,6 @@ body{
     min-width: 300px;
 
 
-
     #content{
 
         min-height: 50vh;
@@ -36,6 +35,9 @@ body{
         }
     }
 
+    .simplert__title{
+        font-size : 20px;
+    }
 
     .simplert__close, .simplert__confirm {
         margin: 0px 0.4em;

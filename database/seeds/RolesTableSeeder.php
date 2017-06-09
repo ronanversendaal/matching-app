@@ -10,6 +10,14 @@ class RolesTableSeeder extends Seeder
      */
     public function run()
     {
+
+        $role = Role::firstOrNew(['name' => 'superuser']);
+        if (!$role->exists) {
+            $role->fill([
+                    'display_name' => 'Superuser',
+                ])->save();
+        }
+
         $role = Role::firstOrNew(['name' => 'admin']);
         if (!$role->exists) {
             $role->fill([

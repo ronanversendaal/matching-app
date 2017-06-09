@@ -15,6 +15,17 @@ class UsersTableSeeder extends Seeder
     public function run(Faker\Generator $faker)
     {
         if (User::count() == 0) {
+
+            $role = Role::where('name', 'superuser')->firstOrFail();
+
+            User::create([
+                'name'           => 'Superuser',
+                'email'          => 'superuser@example.com', // Change this to something secure in production.
+                'password'       => bcrypt('admin'),
+                'role_id'        => $role->id,
+                'approved'       => 1
+            ]);
+
             $role = Role::where('name', 'admin')->firstOrFail();
 
             User::create([
@@ -30,43 +41,43 @@ class UsersTableSeeder extends Seeder
             $role_executive  = Role::where('name', 'executive')->first();
 
             $client = User::create([
-                'name'           => 'Client Tester',
+                'name'           => $faker->name,
                 'email'          => 'client@example.com',
                 'password'       => bcrypt('client'),
                 'role_id'        => $role_client->id,
                 'approved'       => 1
             ]);
 
-            $details = ['bio' => $faker->realText(254), 'profile' => 'https://api.adorable.io/avatars/500/'.str_random(10), 'user_id' => $client->id];
+            $details = ['bio' => $faker->realText(600, 1), 'description' => $faker->realText(254, 1), 'profile' => 'https://placem.at/people?w=500&h=500&txt=0&random='.str_random(4), 'user_id' => $client->id];
 
             UserDetails::create($details);
 
             $client = User::create([
-                'name'           => 'Client Tester 2',
+                'name'           => $faker->name,
                 'email'          => 'client2@example.com',
                 'password'       => bcrypt('client'),
                 'role_id'        => $role_client->id,
                 'approved'       => 1
             ]);
 
-            $details_2 = ['bio' => $faker->realText(254), 'profile' => 'https://api.adorable.io/avatars/500/'.str_random(10), 'user_id' => $client->id];
+            $details_2 = ['bio' => $faker->realText(600, 2), 'description' => $faker->realText(254, 2), 'profile' =>   'https://placem.at/people?w=500&h=500&txt=0&random='.str_random(4), 'user_id' => $client->id];
 
             UserDetails::create($details_2);
 
             $client = User::create([
-                'name'           => 'Client Tester 3',
+                'name'           => $faker->name,
                 'email'          => 'client3@example.com',
                 'password'       => bcrypt('client'),
                 'role_id'        => $role_client->id,
                 'approved'       => 1
             ]);
 
-            $details_3 = ['bio' => $faker->realText(254), 'profile' => 'https://api.adorable.io/avatars/500/'.str_random(10), 'user_id' => $client->id];
+            $details_3 = ['bio' => $faker->realText(600, 3), 'description' => $faker->realText(254, 3), 'profile' => 'https://placem.at/people?w=500&h=500&txt=0&random='.str_random(4), 'user_id' => $client->id];
 
             UserDetails::create($details_3);
 
             $volunteer = User::create([
-                'name'           => 'Volunteer Tester',
+                'name'           => '(Vrijwilliger) '. $faker->name,
                 'email'          => 'volunteer@example.com',
                 'password'       => bcrypt('volunteer'),
                 'role_id'        => $role_volunteer->id,
@@ -74,7 +85,7 @@ class UsersTableSeeder extends Seeder
             ]);
 
             $executive = User::create([
-                'name'           => 'Executive Tester',
+                'name'           => '(Eindverantwoordelijke) '.$faker->name,
                 'email'          => 'executive@example.com',
                 'password'       => bcrypt('executive'),
                 'role_id'        => $role_executive->id,

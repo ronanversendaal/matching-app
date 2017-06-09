@@ -20,6 +20,14 @@
     box-sizing: border-box;
 
     outline: none  !important; 
+
+    &:hover,
+    &:active,
+    &.active,
+    &:focus,
+    &:active:focus{
+        color: #fff;
+    }
     
 
     &:not(.btn-link){
@@ -79,6 +87,20 @@
 
             top: 4px;
             left: -10px;
+    }
+
+}
+
+
+//  Icons
+.btn{
+
+    .glyphicon{
+        top : 2px;
+
+        &+span{
+            margin-left: 5px;
+        }
     }
 
 }

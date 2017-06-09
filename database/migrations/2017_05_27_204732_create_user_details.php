@@ -15,6 +15,7 @@ class CreateUserDetails extends Migration
     {
         Schema::create('user_details', function($t){
             $t->increments('id');
+            $t->string('description', 255);
             $t->text('bio');
             $t->string('profile')->nullable();
             $t->integer('user_id')->unsigned();

@@ -78,6 +78,21 @@ class MenuItemsTableSeeder extends Seeder
                     'order'      => 3,
                 ])->save();
             }
+
+            $menuItem = MenuItem::firstOrNew([
+                'menu_id'    => $menu->id,
+                'title'      => 'Beheer',
+                'url'        => route('voyager.users.index', [], false),
+            ]);
+            if (!$menuItem->exists) {
+                $menuItem->fill([
+                    'target'     => '_self',
+                    'icon_class' => 'voyager-list-add',
+                    'color'      => null,
+                    'parent_id'  => $userMenuItem->id,
+                    'order'      => 3,
+                ])->save();
+            }
             
             $menuItem = MenuItem::firstOrNew([
                 'menu_id'    => $menu->id,

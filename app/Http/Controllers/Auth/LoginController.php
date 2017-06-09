@@ -26,12 +26,15 @@ class LoginController extends Controller
     {
         $user = Auth::user();
 
+        dd($user->role->name);
+
         switch ($user->role->name) {
             case 'volunteer':
                 return route('app');
                 break;
             case 'executive':
             case 'admin':
+            case 'superuser':
                 return route('voyager.dashboard');
             default:
                 return route('index');

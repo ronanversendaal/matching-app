@@ -15,11 +15,34 @@ class PermissionRoleTableSeeder extends Seeder
     {
 
         // @todo add super user role and add all permissions
+        $role = Role::where('name', 'superuser')->firstOrFail();
+
+        $permissions = Permission::all();
+
+        $role->permissions()->sync(
+            $permissions->pluck('id')->all()
+        );
 
         // Admin may do certain stuff
         $role = Role::where('name', 'admin')->firstOrFail();
 
-        $permissions = Permission::all();
+        $permissions = Permission::whereIn('key', [
+            'browse_admin', // Users, Media?, Pages?
+            'browse_media',
+            'browse_app',
+            'browse_matches',
+            'read_matches',
+            'browse_pages',
+            'read_pages',
+            'edit_pages',
+            'add_pages',
+            'delete_pages',
+            'browse_users',
+            'read_users',
+            'edit_users',
+            'add_users',
+            'delete_users'
+        ])->get();
 
         $role->permissions()->sync(
             $permissions->pluck('id')->all()

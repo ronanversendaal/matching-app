@@ -9,8 +9,17 @@
         <div class="well" id="info">
 
           <div class="picker-actions row clearfix">
-              <div class="btn btn-primary" @click="pick(index)">
-                <span class="glyphicon glyphicon-thumbs-up"></span>
+
+              <div class="pull-left btn-like">
+                <div class="btn btn-primary" @click="pick(index)">
+                  <span class="glyphicon glyphicon-thumbs-up"></span>
+                </div>
+              </div>
+              <div class="text-center" style="position: absolute; left: 50%;
+    transform: translateX(-50%);">
+                <div class="btn btn-default"  @click="showBio(index)">
+                 <span class="glyphicon glyphicon-info-sign"></span> <span>Info</span>
+                </div>
               </div>
               <div class="pull-right">
                 <div class="btn btn-default btn-next" @click="next()">&nbsp;</div>
@@ -18,9 +27,8 @@
           </div>
 
             <h6 class="info-title">{{current.name}}</h6>
-              <div class="divider"></div>
               <p class="info-bio">
-                  {{current.details.bio}}
+                  {{current.details.description}}
               </p>
             <div class="tags">
             </div>
@@ -89,9 +97,21 @@
           }
         },
         mounted(){
-          this.setSlide(0); 
+          this.setSlide(0);
         },
         methods:{
+            showBio(index){
+
+              let obj = {
+                  title: this.itemList[index].name,
+                  message: this.itemList[index].details.bio, //@todo Max 600 for style purposes
+                  type: 'info',
+                  customCloseBtnText : 'Sluiten',
+                  customCloseBtnClass: 'btn btn-primary',
+                  customIconUrl : '/img/logo-icon-44.png'
+                }
+                this.$refs.simplert.openSimplert(obj)
+            },
             next() {
                 this.$refs.slick.next();
             },
@@ -106,14 +126,11 @@
             pick(index){
 
                 let obj = {
-                  title: 'Match!',
-                  message: 'Now that you have a match with ' + this.itemList[index].name + ', what would you do now?',
+                  title: 'Bedankt!',
+                  message: 'Je aanvraag is in behandeling.',
                   type: 'success',
-                  useConfirmBtn: true,
-                  customConfirmBtnText: 'I dunno?', //string -- confirm button text
-                  customConfirmBtnClass: 'btn btn-primary',
-                  customCloseBtnText : 'Me neither.',
-                  customCloseBtnClass: 'btn btn-default',
+                  customCloseBtnText : 'Sluiten',
+                  customCloseBtnClass: 'btn btn-primary',
                 }
                 this.$refs.simplert.openSimplert(obj)
             },
