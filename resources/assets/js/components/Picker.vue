@@ -191,7 +191,7 @@
 
                     obj.title = 'Succes';
                     obj.message = res.data.message;
-                    obj.type = 'success';
+                    obj.type = 'warning';
 
                     this.current.matched = 0;
 
