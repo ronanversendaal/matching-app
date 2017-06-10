@@ -3,6 +3,7 @@
 use App\Repositories\UserRepositoryEloquent;
 use App\Repositories\RoleRepositoryEloquent;
 use App\Criteria\RoleNameCriteria;
+use App\Criteria\RandomCriteria;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Database\QueryException;
@@ -55,7 +56,10 @@ class IndexController extends Controller
     {
         $role = $this->roleRepository->client;
 
-        $clients = $this->userRepository->pushCriteria(new RoleNameCriteria($role))->all();
+        $clients = $this->userRepository
+                ->pushCriteria(RandomCriteria::class)
+                ->pushCriteria(new RoleNameCriteria($role))
+                ->all();
 
         return view('index', ['clients' => $clients]);
     }
