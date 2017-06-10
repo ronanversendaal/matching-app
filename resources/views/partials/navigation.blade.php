@@ -18,7 +18,7 @@
           @php
             switch (Auth::user()->role->name) {
               case 'volunteer':
-                  $actions = [['name' => 'App', 'link' => route('app')]];
+                  $actions = [['name' => 'Cliënten zoeken', 'link' => route('app')]];
                 break;
               case 'admin':
               case 'executive':

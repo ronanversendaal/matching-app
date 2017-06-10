@@ -16,6 +16,26 @@ Route::get('/', array(
     'uses' => 'PageController@index'
 ));
 
+Route::get('/verhalen-vrijwilligers', array(
+    'as' => 'index',
+    'uses' => 'PageController@getStories'
+));
+
+Route::get('//verhalen-clienten', array(
+    'as' => 'index',
+    'uses' => 'PageController@getStories'
+));
+
+Route::get('/eindverantwoordelijken', array(
+    'as' => 'index',
+    'uses' => 'PageController@getExecutives'
+));
+
+Route::get('/contact', array(
+    'as' => 'index',
+    'uses' => 'PageController@contact'
+));
+
 // Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 // Authentication Routes...
 Auth::routes();
