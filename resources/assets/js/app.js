@@ -7,8 +7,15 @@
 
 
 require('./bootstrap');
-
 window.Vue = require('vue');
+Vue.prototype.$http = axios;
+axios.defaults.headers.common['X-CSRF-TOKEN'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+// var vueResource = require('vue-axios')
+// Vue.use(vueResource);
+
+// Vue.$http.headers.common['X-CSRF-TOKEN'] = $('meta[name="csrf-token"]').attr('content');
+
 
 Slick = require('vue-slick');
 Vue.use(Slick);

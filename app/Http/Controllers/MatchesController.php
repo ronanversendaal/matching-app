@@ -18,6 +18,7 @@ class MatchesController extends VoyagerBreadController{
     
     public function index(Request $request)
     {
+        dd($request->slug);
          // GET THE SLUG, ex. 'posts', 'pages', etc.
         $slug = $this->getSlug($request);
 

@@ -10,6 +10,15 @@
 
         .btn-like{
             position: absolute;
+
+            .btn-primary.matched {
+
+                box-shadow: none;
+                top: 0px;
+                left: 0px;
+                background-color: #f090b9;
+                border-color: #f090b9;
+            }
         }
     }
 

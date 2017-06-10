@@ -20,7 +20,16 @@ Route::get('/', array(
 // Authentication Routes...
 Auth::routes();
 
-Route::get('/app', 'IndexController@getIndex')->name('app')->middleware('auth.app');
+Route::group(['prefix' => 'app'], function(){
+    Route::get('', 'IndexController@getIndex')->name('app')->middleware('auth.app');
+
+    Route::group(['prefix' => 'matches'], function(){
+        Route::post('', 'IndexController@storeMatch');
+        Route::delete('', 'IndexController@destroyMatch');
+    });
+});
+
+
 
 
 Route::group(['prefix' => 'admin'], function () {
@@ -29,7 +38,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('login', 'IndexController@postLogin')->name('voyager.login');
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('voyager.login');
 
-    Route::resource('matches', 'MatchesController', [
+    Route::resource('matches', 'MatchesController', [ // @todo Move this to Controllers/Voyager
         'only' => [
             'create' => 'matches.create',
             'show' => 'voyager.matches.show',

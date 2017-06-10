@@ -15,10 +15,12 @@ class CreateMatchesTable extends Migration
     {
         Schema::create('matches', function($t){
             $t->increments('id');
-            $t->integer('volunteer')->foreign()->on('users')->references('id')->onDelete('cascade');
-            $t->integer('client')->foreign()->on('users')->references('id')->onDelete('cascade');
+            $t->integer('user_id')->foreign()->on('users')->references('id')->onDelete('cascade');
+            $t->integer('client_id')->foreign()->on('users')->references('id')->onDelete('cascade');
+            $t->datetime('approved_at')->nullable();
             $t->timestamps();
             $t->softDeletes();
+            $t->unique(['user_id', 'client_id']);
         });
     }
 

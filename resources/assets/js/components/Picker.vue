@@ -11,7 +11,7 @@
           <div class="picker-actions row clearfix">
 
               <div class="pull-left btn-like">
-                <div class="btn btn-primary" @click="pick(index)">
+                <div class="btn btn-primary" :class="{matched : current.matched}" @click="pick(index)">
                   <span class="glyphicon glyphicon-thumbs-up"></span>
                 </div>
               </div>
@@ -50,12 +50,16 @@
 
         data (){
             return {
+
+                matchUrl : '/app/matches',
                 current : {
+                  id: '',
                   name : '',
                   details : {
                     profile : '',
                     bio : ''
-                  }
+                  },
+                  matched: 0
                 },
                 index : 0,
                 slickOptions : {
@@ -90,10 +94,13 @@
                 }
             }
         },
-        props : ['list'],
+        props : ['list', 'user'],
         computed: {
           itemList : function(){
             return  JSON.parse(this.list);
+          },
+          volunteer : function(){
+            return  JSON.parse(this.user);
           }
         },
         mounted(){
@@ -125,15 +132,82 @@
 
             pick(index){
 
-                let obj = {
-                  title: 'Bedankt!',
-                  message: 'Je aanvraag is in behandeling.',
-                  type: 'success',
+                if(this.current.matched){
+                  // Remove match
+                  this.deleteMatch();
+                } else {
+                  // Create
+                  this.createMatch();
+                }              
+
+                
+            },
+            createMatch(){
+
+              let obj = {
                   customCloseBtnText : 'Sluiten',
                   customCloseBtnClass: 'btn btn-primary',
                 }
-                this.$refs.simplert.openSimplert(obj)
+
+                let body = {
+                  user_id : this.volunteer.id,
+                  client_id : this.current.id,
+                }
+
+                this.$http.post(this.matchUrl, body).then(res =>{
+
+                    obj.title = 'Bedankt!';
+                    obj.message = res.data.message;
+                    obj.type = 'success';
+
+                    this.current.matched = 1;
+
+                  this.$refs.simplert.openSimplert(obj)
+
+                }).catch(e => {
+
+                    obj.title = 'Uh oh.';
+                    obj.message = e.response.data.message;
+                    obj.type = 'error';
+                    if(e.response.status === 400){
+                      obj.type = 'warning';
+                    }
+                  this.$refs.simplert.openSimplert(obj)
+                });
             },
+            deleteMatch(){
+              let obj = {
+                  customCloseBtnText : 'Sluiten',
+                  customCloseBtnClass: 'btn btn-primary',
+                }
+                let data = {
+                  data : {
+                    user_id : this.volunteer.id,
+                    client_id : this.current.id,
+                  }
+                }
+
+                this.$http.delete(this.matchUrl, data).then(res =>{
+
+                    obj.title = 'Succes';
+                    obj.message = res.data.message;
+                    obj.type = 'success';
+
+                    this.current.matched = 0;
+
+                  this.$refs.simplert.openSimplert(obj)
+
+                }).catch(e => {
+
+                    obj.title = 'Uh oh.';
+                    obj.message = e.response.data.message;
+                    obj.type = 'error';
+                    if(e.response.status === 400){
+                      obj.type = 'warning';
+                    }
+                  this.$refs.simplert.openSimplert(obj)
+                });
+            }
         }
     }
 </script>
