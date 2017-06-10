@@ -5,15 +5,12 @@ nav.navbar{
         display: block;
         background-repeat: no-repeat;
         text-indent: -99999px;
-        padding: 30px 0px;
-        background-position: 25% center;
-        background-size: 100%;
-        max-width: 40%;
-        width: 170px;
-        height: 100%;
-
-        // Create media queries
-
+            padding: 20px 60px;
+    background-position: 25% center;
+    background-size: 80%;
+    max-width: 40%;
+    width: 160px;
+    height: 100%;
     }
 
     li{
@@ -28,5 +25,34 @@ nav.navbar{
     .navbar-toggle{
         border: none;
         padding: 15px 10px;
+    }
+}
+// Create media queries
+        
+@media screen and (max-width: 360px) {
+    nav.navbar{
+
+        a#logo{
+            padding: 20px 0px;
+            background-size: 60%;
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    nav.navbar{
+
+        a#logo{
+            background-size: 60%;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 990px) {
+  nav.navbar{
+
+        a#logo{
+            width: 120px;
+        }
     }
 }
