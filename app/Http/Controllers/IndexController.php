@@ -98,7 +98,7 @@ class IndexController extends Controller
     /**
      * [storeMatch description]
      * @param  Request $request [description]
-     * @return [type]           [description]
+     * @return Response          [description]
      */
     public function storeMatch(Request $request)
     {
@@ -137,7 +137,7 @@ class IndexController extends Controller
     /**
      * Removes the match
      * @param  Request $request [description]
-     * @return [type]           [description]
+     * @return Response          [description]
      */
     public function destroyMatch(Request $request)
     {

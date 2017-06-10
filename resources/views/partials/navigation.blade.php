@@ -10,29 +10,55 @@
       <a class="navbar-brand" id="logo" href="{{route('index')}}">{{config('app.name')}}</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            @if (Route::has('voyager.login'))
-                  @if (Auth::check())
-                      <li><a href="{{ url(route('app.logout')) }}"
-                          onclick="event.preventDefault();
-                                   document.getElementById('logout-form').submit();">
-                          Logout
-                      </a></li>
+    {{{menu('main', 'bootstrap')}}}
 
-                  @else
-                      <li><a href="{{ url(route('voyager.login')) }}">Login</a>
-                      <li><a href="{{ url(route('register')) }}">Register</a></li>
-                  @endif
-            @endif
-          </ul>
+        <ul class="nav navbar-nav navbar-right">
 
-        </li>
+          @if(Auth::check())
+          @php
+            switch (Auth::user()->role->name) {
+              case 'volunteer':
+                  $actions = [['name' => 'App', 'link' => route('app')]];
+                break;
+              case 'admin':
+              case 'executive':
+              case 'superuser':
+                  $actions = [['name' => 'Dashboard', 'link'  => route('voyager.dashboard')]];
+                break;            
+              default:
+                break;
+            }
+          @endphp
+
+        @foreach($actions as $action)
+          <li><a href="{{$action['link']}}">{{$action['name']}}</a></li>
+        @endforeach
+
+
+        <li><a href="{{ url(route('app.logout')) }}"
+            onclick="event.preventDefault();
+                     document.getElementById('logout-form').submit();">
+            Logout
+        </a></li>
+
+      @else
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Vrijwilligers <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              @if (Route::has('voyager.login'))
+                    @if (Auth::check())
+                        
+                    @else
+                        <li><a href="{{ url(route('voyager.login')) }}">Login</a>
+                        <li><a href="{{ url(route('register')) }}">Register</a></li>
+                    @endif
+              @endif
+            </ul>
+
+          </li>
+
+      @endif
+
       </ul>
   </div>
 

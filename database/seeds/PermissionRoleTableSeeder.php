@@ -32,6 +32,7 @@ class PermissionRoleTableSeeder extends Seeder
             'browse_app',
             'browse_matches',
             'read_matches',
+            'approve_matches',
             'browse_pages',
             'read_pages',
             'edit_pages',
@@ -53,7 +54,11 @@ class PermissionRoleTableSeeder extends Seeder
 
         // Restrict certain
         $permissions = Permission::whereIn('key', [
-            'browse_admin'
+            'browse_admin',
+            'browse_matches',
+            'read_matches',
+            'approve_matches',
+            'browse_users',
         ])->get();
 
         $role->permissions()->sync(

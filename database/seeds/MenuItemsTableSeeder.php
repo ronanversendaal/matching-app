@@ -198,6 +198,57 @@ class MenuItemsTableSeeder extends Seeder
                     'order'      => 12,
                 ])->save();
             }
+
+
+            $menu = Menu::where('name', 'main')->firstOrFail();
+
+            $menuItem = MenuItem::firstOrNew([
+                'menu_id'    => $menu->id,
+                'title'      => 'Verhalen vrijwilligers',
+                'url'        => '/verhalen-vrijwilligers',
+            ]);
+            if (!$menuItem->exists) {
+                $menuItem->fill([
+                    'target'     => '_self',
+                    'order'      => 1,
+                ])->save();
+            }
+
+            $menuItem = MenuItem::firstOrNew([
+                'menu_id'    => $menu->id,
+                'title'      => 'Verhalen clienten',
+                'url'        => '/verhalen-clienten',
+            ]);
+            if (!$menuItem->exists) {
+                $menuItem->fill([
+                    'target'     => '_self',
+                    'order'      => 2,
+                ])->save();
+            }
+
+            $menuItem = MenuItem::firstOrNew([
+                'menu_id'    => $menu->id,
+                'title'      => 'Eindverantwoordelijken',
+                'url'        => '/eindverantwoordelijken',
+            ]);
+            if (!$menuItem->exists) {
+                $menuItem->fill([
+                    'target'     => '_self',
+                    'order'      => 3,
+                ])->save();
+            }
+
+            $menuItem = MenuItem::firstOrNew([
+                'menu_id'    => $menu->id,
+                'title'      => 'Contact',
+                'url'        => '/contact',
+            ]);
+            if (!$menuItem->exists) {
+                $menuItem->fill([
+                    'target'     => '_self',
+                    'order'      => 4,
+                ])->save();
+            }
         }
     }
 }

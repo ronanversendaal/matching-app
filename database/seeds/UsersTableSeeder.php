@@ -77,7 +77,7 @@ class UsersTableSeeder extends Seeder
             UserDetails::create($details_3);
 
             $volunteer = User::create([
-                'name'           => '(Vrijwilliger) '. $faker->name,
+                'name'           => $faker->name,
                 'email'          => 'volunteer@example.com',
                 'password'       => bcrypt('volunteer'),
                 'role_id'        => $role_volunteer->id,
@@ -85,7 +85,7 @@ class UsersTableSeeder extends Seeder
             ]);
 
             $executive = User::create([
-                'name'           => '(Eindverantwoordelijke) '.$faker->name,
+                'name'           => $faker->name,
                 'email'          => 'executive@example.com',
                 'password'       => bcrypt('executive'),
                 'role_id'        => $role_executive->id,
