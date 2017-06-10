@@ -17,22 +17,22 @@ Route::get('/', array(
 ));
 
 Route::get('/verhalen-vrijwilligers', array(
-    'as' => 'index',
+    'as' => 'stories-volunteers',
     'uses' => 'PageController@getStories'
 ));
 
-Route::get('//verhalen-clienten', array(
-    'as' => 'index',
+Route::get('/verhalen-clienten', array(
+    'as' => 'stories-clients',
     'uses' => 'PageController@getStories'
 ));
 
 Route::get('/eindverantwoordelijken', array(
-    'as' => 'index',
+    'as' => 'executives',
     'uses' => 'PageController@getExecutives'
 ));
 
 Route::get('/contact', array(
-    'as' => 'index',
+    'as' => 'contact',
     'uses' => 'PageController@contact'
 ));
 
