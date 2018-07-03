@@ -189,9 +189,9 @@
 
                 this.$http.delete(this.matchUrl, data).then(res =>{
 
-                    obj.title = 'Succes';
+                    obj.title = 'Ongedaan';
                     obj.message = res.data.message;
-                    obj.type = 'warning';
+                    obj.customIconUrl = '';
 
                     this.current.matched = 0;
 
